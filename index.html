@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Priv - Online Anonymity Guide</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Client-side Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -15,25 +17,25 @@
             <details open>
                 <summary>Getting Started</summary>
                 <ul>
-                    <li><a href="#" data-src="/getting-started/introduction">Introduction</a></li>
+                    <li><a href="#" data-src="/getting-started/introduction.md">Introduction</a></li>
                 </ul>
             </details>
             <details>
                 <summary>Tools</summary>
                 <ul>
-                    <li><a href="#" data-src="/tools/overview">Overview</a></li>
+                    <li><a href="#" data-src="/tools/overview.md">Overview</a></li>
                 </ul>
             </details>
             <details>
                 <summary>Concepts</summary>
                 <ul>
-                    <li><a href="#" data-src="/concepts/overview">Overview</a></li>
+                    <li><a href="#" data-src="/concepts/overview.md">Overview</a></li>
                 </ul>
             </details>
             <details>
                 <summary>News</summary>
                 <ul>
-                    <li><a href="#" data-src="/news/overview">Overview</a></li>
+                    <li><a href="#" data-src="/news/overview.md">Overview</a></li>
                 </ul>
             </details>
         </aside>
@@ -42,6 +44,11 @@
         </main>
     </div>
     <script>
+        function stripFrontMatter(md) {
+            // Remove YAML front matter (--- ... ---) if present
+            return md.replace(/^---[\s\S]*?---\s*/m, '');
+        }
+
         function loadPage(src) {
             const container = document.getElementById('mdContent');
             container.innerHTML = '<p class="md-loading">Loading…</p>';
@@ -50,14 +57,17 @@
                     if (!res.ok) throw new Error(`HTTP ${res.status}`);
                     return res.text();
                 })
-                .then(html => { container.innerHTML = html; })
+                .then(markdown => {
+                    const clean = stripFrontMatter(markdown);
+                    container.innerHTML = marked.parse(clean);
+                })
                 .catch(err => {
                     container.innerHTML = `<p class="md-error">Failed to load content: ${err.message}</p>`;
                 });
         }
 
         // Load the default page on first visit
-        loadPage('/getting-started/introduction');
+        loadPage('/getting-started/introduction.md');
 
         document.querySelectorAll('.sidebar a').forEach(link => {
             link.addEventListener('click', e => {
