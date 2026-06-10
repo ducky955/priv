@@ -66,6 +66,15 @@ nav a:hover {
   background: #0056b3;
 }
 
+nav a.active {
+  background: #003f7f;
+  color: #fff;
+}
+
+nav a.active:hover {
+  background: #00336a;
+}
+
 /* Section Styling */
 section {
   background: #fff;

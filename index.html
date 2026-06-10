@@ -26,6 +26,16 @@
         <p>Click a navigation link above to open the section you want, such as <strong>Getting Started</strong>, <strong>Tools</strong>, <strong>Concepts</strong>, or <strong>News</strong>.</p>
     </section>
     </main>
+    <script>
+      const navLinks = document.querySelectorAll('nav a');
+      const currentPath = location.pathname.replace(/\/$/, '');
+      navLinks.forEach(link => {
+        const linkPath = new URL(link.getAttribute('href'), location.href).pathname.replace(/\/$/, '');
+        if (linkPath === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    </script>
 </body>
 
 </html>
