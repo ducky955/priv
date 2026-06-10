@@ -75,8 +75,8 @@ iframe.md-embed {
   }
 }
 /* Layout styling */
-.container {display: flex; gap: 1rem;}
-.sidebar {flex: 0 0 250px; max-height: calc(100vh - 4rem); overflow-y: auto; background: #f8f9fa; padding: 1rem; border-right: 1px solid #e0e0e0;}
+.container {display: flex; gap: 1rem; min-height: 100vh;}
+.sidebar {flex: 0 0 250px; height: 100vh; overflow-y: auto; background: #f8f9fa; padding: 1rem; border-right: 1px solid #e0e0e0;}
 .content {flex: 1; overflow-y: auto;}
 details > summary {font-weight: 600; cursor: pointer; padding: .5rem 0;}
 details[open] > summary {color: #007bff;}
