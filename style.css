@@ -75,6 +75,60 @@ nav a.active:hover {
   background: #00336a;
 }
 
+/* Dropdown Menu */
+nav details {
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+nav details > summary {
+  color: #fff;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+  display: block;
+  background: #007bff;
+  border: none;
+  margin: 0;
+}
+
+nav details > summary:hover {
+  background: #0056b3;
+}
+
+nav details[open] > summary {
+  background: #0056b3;
+}
+
+nav details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #005a99;
+}
+
+nav details a {
+  display: block;
+  color: #e8f4f8;
+  padding: 0.75rem 2rem;
+  text-decoration: none;
+  font-weight: 400;
+  border: none;
+  font-size: 0.9em;
+}
+
+nav details a:hover {
+  background: #004080;
+  color: #fff;
+}
+
+nav details a.active {
+  background: #003f7f;
+  color: #fff;
+  font-weight: 600;
+}
+
 /* Section Styling */
 section {
   background: #fff;

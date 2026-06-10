@@ -11,12 +11,36 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../">Home</a></li>
-            <li><a href="../getting-started/">Getting Started</a></li>
-            <li><a href="../tools/">Tools</a></li>
-            <li><a href="../concepts/">Concepts</a></li>
-            <li><a href="../news/">News</a></li>
+            <li><a href="../" class="nav-link">Home</a></li>
         </ul>
+        <details>
+            <summary>Getting Started</summary>
+            <ul>
+                <li><a href="../getting-started/" class="nav-link">Section Index</a></li>
+                <li><a href="#" class="md-link" data-md="../getting-started/introduction.md">Introduction</a></li>
+            </ul>
+        </details>
+        <details open>
+            <summary>Tools</summary>
+            <ul>
+                <li><a href="../tools/" class="nav-link">Section Index</a></li>
+                <li><a href="#" class="md-link" data-md="../tools/overview.md">Overview</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>Concepts</summary>
+            <ul>
+                <li><a href="../concepts/" class="nav-link">Section Index</a></li>
+                <li><a href="#" class="md-link" data-md="../concepts/overview.md">Overview</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>News</summary>
+            <ul>
+                <li><a href="../news/" class="nav-link">Section Index</a></li>
+                <li><a href="#" class="md-link" data-md="../news/overview.md">Overview</a></li>
+            </ul>
+        </details>
     </nav>
     <main class="main-content">
         <h1>Tools</h1>
@@ -42,17 +66,40 @@
         <p>Add your detailed tool guides, configuration instructions, and security audits here!</p>
     </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
-      (function() {
-        if (document.title.includes('Tools')) {
-          const links = document.querySelectorAll('nav a');
-          links.forEach(link => {
-            if (link.getAttribute('href').includes('tools')) {
-              link.classList.add('active');
-            }
+      // Mark section index link as active
+      const sectionLink = document.querySelector('a[href="../tools/"]');
+      if (sectionLink) sectionLink.classList.add('active');
+      
+      // Handle markdown file clicks
+      document.querySelectorAll('.md-link').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const mdFile = link.getAttribute('data-md');
+          loadMarkdown(mdFile);
+          // Mark this link as active
+          document.querySelectorAll('.md-link').forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+      
+      function loadMarkdown(mdPath) {
+        const container = document.querySelector('section');
+        container.innerHTML = '<p style="color:#888; font-style:italic;">Loading…</p>';
+        fetch(mdPath)
+          .then(res => {
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            return res.text();
+          })
+          .then(md => {
+            const clean = md.replace(/^---[\s\S]*?---\s*/m, '');
+            container.innerHTML = marked.parse(clean);
+          })
+          .catch(err => {
+            container.innerHTML = `<p style="color:#c0392b;">Failed to load: ${err.message}</p>`;
           });
-        }
-      })();
+      }
     </script>
 </body>
 
