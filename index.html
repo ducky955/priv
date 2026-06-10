@@ -27,13 +27,22 @@
     </section>
     </main>
     <script>
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href').replace(/\/$/, '').replace(/\.\//, '');
-        const current = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '');
-        if (current.endsWith(href) || (href === '' && current.endsWith('priv'))) {
-          link.classList.add('active');
-        }
-      });
+      (function() {
+        const pageMap = {
+          'Priv - Online Anonymity Guide': '../',
+          'Getting Started - Priv': '../getting-started/',
+          'Tools - Priv': '../tools/',
+          'Concepts - Priv': '../concepts/',
+          'News - Priv': '../news/'
+        };
+        const title = document.title;
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+          if (link.getAttribute('href') === './') {
+            link.classList.add('active');
+          }
+        });
+      })();
     </script>
 </body>
 
