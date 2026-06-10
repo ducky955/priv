@@ -43,11 +43,14 @@
     </section>
     </main>
     <script>
-      const navLinks = document.querySelectorAll('nav a');
-      const currentPath = location.pathname.replace(/\/$/, '');
-      navLinks.forEach(link => {
-        const linkPath = new URL(link.getAttribute('href'), location.href).pathname.replace(/\/$/, '');
-        if (linkPath === currentPath) {
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href').replace(/\/$/, '').replace(/\.\.\//, '').replace(/\.\//, '');
+        const current = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '').split('/').pop();
+        if (href === 'tools' && current === 'tools') {
+          link.classList.add('active');
+        } else if (href === '' && current === 'priv') {
+          link.classList.add('active');
+        } else if (current === href) {
           link.classList.add('active');
         }
       });
