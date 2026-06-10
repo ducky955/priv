@@ -10,36 +10,46 @@
 
 <body>
     <h1>The website for learning about online anonymity</h1>
-    <nav>
-        <ul>
-            <li><a href="/priv/getting-started/introduction">Getting Started</a></li>
-            <li><a href="/priv/tools/overview">Tools</a></li>
-            <li><a href="/priv/concepts/overview">Concepts</a></li>
-            <li><a href="/priv/news/overview">News</a></li>
-        </ul>
-    </nav>
-
-
-
-    <section id="getting-started">
-        <h2>Getting Started</h2>
-        <iframe src="getting-started/introduction.md" class="md-embed"></iframe>
-    </section>
-
-    <section id="tools">
-        <h2>Tools</h2>
-        <iframe src="tools/overview.md" class="md-embed"></iframe>
-    </section>
-
-    <section id="concepts">
-        <h2>Concepts</h2>
-        <iframe src="concepts/overview.md" class="md-embed"></iframe>
-    </section>
-
-    <section id="news">
-        <h2>News</h2>
-        <iframe src="news/overview.md" class="md-embed"></iframe>
-    </section>
+<div class="container">
+    <aside class="sidebar">
+        <details open>
+            <summary>Getting Started</summary>
+            <ul>
+                <li><a href="#" data-src="getting-started/introduction.md">Introduction</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>Tools</summary>
+            <ul>
+                <li><a href="#" data-src="tools/overview.md">Overview</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>Concepts</summary>
+            <ul>
+                <li><a href="#" data-src="concepts/overview.md">Overview</a></li>
+            </ul>
+        </details>
+        <details>
+            <summary>News</summary>
+            <ul>
+                <li><a href="#" data-src="news/overview.md">Overview</a></li>
+            </ul>
+        </details>
+    </aside>
+    <main class="content">
+        <iframe id="mdViewer" class="md-embed" src="getting-started/introduction.md"></iframe>
+    </main>
+</div>
+<script>
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const src = link.getAttribute('data-src');
+            document.getElementById('mdViewer').src = src;
+        });
+    });
+</script>
 </body>
 
 </html>

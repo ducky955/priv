@@ -74,3 +74,13 @@ iframe.md-embed {
     padding: 1rem;
   }
 }
+/* Layout styling */
+.container {display: flex; gap: 1rem;}
+.sidebar {flex: 0 0 250px; max-height: calc(100vh - 4rem); overflow-y: auto; background: #f8f9fa; padding: 1rem; border-right: 1px solid #e0e0e0;}
+.content {flex: 1; overflow-y: auto;}
+details > summary {font-weight: 600; cursor: pointer; padding: .5rem 0;}
+details[open] > summary {color: #007bff;}
+.sidebar ul {list-style: none; padding-left: 0;}
+.sidebar li {margin: .5rem 0;}
+.sidebar a {color: #0066cc; text-decoration: none;}
+.sidebar a:hover {text-decoration: underline;}
