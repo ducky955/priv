@@ -70,19 +70,19 @@ section h2 {
 }
 
 .md-content a {
-  color: #0056b3;
+  color: #c9a8a8;
   text-decoration: underline;
 }
 
 .md-content code {
-  background: #f0f0f0;
+  background: #174744;
   padding: 0.15rem 0.4rem;
   border-radius: 3px;
   font-size: 0.9em;
 }
 
 .md-content pre {
-  background: #f0f0f0;
+  background: #174744;
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
@@ -126,9 +126,9 @@ section h2 {
   flex: 0 0 250px;
   height: 100vh;
   overflow-y: auto;
-  background: #f8f9fa;
+  background: #174744;
   padding: 1rem;
-  border-right: 1px solid #e0e0e0;
+  border-right: 1px solid #2d7a76;
 }
 
 .content {
@@ -143,7 +143,7 @@ details>summary {
 }
 
 details[open]>summary {
-  color: #007bff;
+  color: #e0c1c1;
 }
 
 .sidebar ul {
@@ -156,7 +156,7 @@ details[open]>summary {
 }
 
 .sidebar a {
-  color: #0066cc;
+  color: #c9a8a8;
   text-decoration: none;
 }
 
