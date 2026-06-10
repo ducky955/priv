@@ -1,8 +1,3 @@
----
-title: "Latest News & Updates"
-description: "Keep track of security audits, leaks, and updates in the anonymity space."
----
-
 Stay informed on the latest developments in the privacy and anonymity space. This section is used to catalog relevant news, tool audits, and threat landscape updates.
 
 ## Latest Updates

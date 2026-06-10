@@ -1,7 +1,3 @@
----
-title: "Anonymity Concepts"
-description: "Core conceptual ideas behind anonymity, privacy, and security."
----
 
 Understanding the difference between privacy, security, and anonymity is essential for practicing operational security (OPSEC).
 
