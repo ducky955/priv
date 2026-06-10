@@ -1,8 +1,3 @@
----
-title: "Tools Overview"
-description: "A curated list of open-source and paid tools to help you stay anonymous."
----
-
 Choosing the right tools is critical to maintaining online anonymity. Here, we categorize tools into two categories: **Open Source (FOSS)** and **Paid Services**.
 
 ## Tool Categories
