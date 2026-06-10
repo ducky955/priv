@@ -1,0 +1,41 @@
+name: Deploy Mintlify Site
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+# Set required permissions for publishing pages
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Mintlify CLI globally
+        run: npm install -g @mintlify/cli
+
+      - name: Build Mintlify site
+        run: mintlify build
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          # No additional inputs needed; defaults deploy the uploaded artifact
