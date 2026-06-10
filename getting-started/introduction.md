@@ -1,8 +1,3 @@
----
-title: "Introduction"
-description: "Start your journey toward achieving complete online anonymity and privacy."
----
-
 Welcome to the **Anonymity Guide**! This space is dedicated to learning about online anonymity and finding the best open-source and paid tools to protect your digital footprint.
 
 ## What is Online Anonymity?
