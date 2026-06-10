@@ -1,0 +1,53 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Anonymity Guide",
+  "logo": {
+    "light": "",
+    "dark": ""
+  },
+  "colors": {
+    "primary": "#10B981",
+    "light": "#34D399",
+    "dark": "#047857",
+    "background": {
+      "light": "#0F172A",
+      "dark": "#0B0F19"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/ducky955/priv"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Contribute",
+    "url": "https://github.com/ducky955/priv"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/introduction"
+      ]
+    },
+    {
+      "group": "Tools",
+      "pages": [
+        "tools/overview"
+      ]
+    },
+    {
+      "group": "Concepts",
+      "pages": [
+        "concepts/overview"
+      ]
+    },
+    {
+      "group": "News",
+      "pages": [
+        "news/overview"
+      ]
+    }
+  ]
+}
