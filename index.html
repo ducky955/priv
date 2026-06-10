@@ -38,15 +38,32 @@
             </details>
         </aside>
         <main class="content">
-            <iframe id="mdViewer" class="md-embed" src="/getting-started/introduction"></iframe>
+            <div id="mdContent" class="md-content"></div>
         </main>
     </div>
     <script>
+        function loadPage(src) {
+            const container = document.getElementById('mdContent');
+            container.innerHTML = '<p class="md-loading">Loading…</p>';
+            fetch(src)
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.text();
+                })
+                .then(html => { container.innerHTML = html; })
+                .catch(err => {
+                    container.innerHTML = `<p class="md-error">Failed to load content: ${err.message}</p>`;
+                });
+        }
+
+        // Load the default page on first visit
+        loadPage('/getting-started/introduction');
+
         document.querySelectorAll('.sidebar a').forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
                 const src = link.getAttribute('data-src');
-                document.getElementById('mdViewer').src = src;
+                loadPage(src);
             });
         });
     </script>
