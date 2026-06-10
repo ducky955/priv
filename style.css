@@ -118,8 +118,15 @@ section h2 {
 /* Layout styling */
 .container {
   display: flex;
-  gap: 1rem;
-  min-height: 100vh;
+  align-items: flex-start;
+  /* Keeps the sidebar aligned to the top */
+  width: 100%;
+  max-width: 1200px;
+  /* Keeps your site from stretching too wide */
+  margin: 0 auto;
+  /* Centers the entire website wrapper */
+  gap: 20px;
+  /* Puts a clean gap between sidebar and text */
 }
 
 .sidebar {
