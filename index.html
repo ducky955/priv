@@ -10,56 +10,47 @@
 
 <body>
     <h1>The website for learning about online anonymity</h1>
-<div class="container">
-    <aside class="sidebar">
-        <details open>
-            <summary>Getting Started</summary>
-            <ul>
-                <li><a href="#" data-src="getting-started/introduction.md">Introduction</a></li>
-            </ul>
-        </details>
-        <details>
-            <summary>Tools</summary>
-            <ul>
-                <li><a href="#" data-src="tools/overview.md">Overview</a></li>
-            </ul>
-        </details>
-        <details>
-            <summary>Concepts</summary>
-            <ul>
-                <li><a href="#" data-src="concepts/overview.md">Overview</a></li>
-            </ul>
-        </details>
-        <details>
-            <summary>News</summary>
-            <ul>
-                <li><a href="#" data-src="news/overview.md">Overview</a></li>
-            </ul>
-        </details>
-    </aside>
-    <main class="content">
-        <iframe id="mdViewer" class="md-embed" src="getting-started/introduction.md"></iframe>
-    </main>
-</div>
-<script>
-    document.querySelectorAll('.sidebar a').forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const src = link.getAttribute('data-src');
-            document.getElementById('mdViewer').src = src;
+    <div class="container">
+        <aside class="sidebar">
+            <details open>
+                <summary>Getting Started</summary>
+                <ul>
+                    <li><a href="#" data-src="getting-started/introduction.md">Introduction</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Tools</summary>
+                <ul>
+                    <li><a href="#" data-src="tools/overview.md">Overview</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>Concepts</summary>
+                <ul>
+                    <li><a href="#" data-src="concepts/overview.md">Overview</a></li>
+                </ul>
+            </details>
+            <details>
+                <summary>News</summary>
+                <ul>
+                    <li><a href="#" data-src="news/overview.md">Overview</a></li>
+                </ul>
+            </details>
+        </aside>
+        <main class="content">
+            <iframe id="mdViewer" class="md-embed" src="getting-started/introduction.md"></iframe>
+        </main>
+    </div>
+    <script>
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const src = link.getAttribute('data-src');
+                document.getElementById('mdViewer').src = src;
+            });
         });
-    });
-</script>
-<footer class="footer">
-    <nav class="footer-nav">
-        <ul>
-            <li><a href="#" data-src="getting-started/introduction.md">Getting Started</a></li>
-            <li><a href="#" data-src="tools/overview.md">Tools</a></li>
-            <li><a href="#" data-src="concepts/overview.md">Concepts</a></li>
-            <li><a href="#" data-src="news/overview.md">News</a></li>
-        </ul>
-    </nav>
-</footer>
+    </script>
+
 </body>
 
 </html>
