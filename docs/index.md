@@ -1,3 +1,5 @@
+
+## NOTICE: I DO NOT ENCOURAGE THE USE OF ANY TOOLS MENTIONED IN THIS WEBSITE IF NOT USE IN A SAFE MANNER. I AM NOT RESPONSIBLE FOR ANY CONSEQUENCES DUE TO ANY OF YOUR ACTIONS
 # Priv - Online Anonymity Guide
 
 Welcome to **Priv**, your comprehensive resource for learning about online anonymity and finding the best tools to protect your digital footprint.
