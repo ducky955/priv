@@ -13,4 +13,4 @@ Online anonymity is the ability to interact on the internet without revealing yo
 - **Concepts**: Core principles of privacy, security, and anonymity
 - **News**: Latest updates in the privacy and anonymity space
 
-Start exploring by selecting a section from the navigation menu on the left.
+Start exploring by selecting a section from the navigation menu on the top.
