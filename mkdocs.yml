@@ -18,7 +18,7 @@ theme:
     accent: purple
 
 nav:
-  - Home: index.md
+  - Home: docs/index.md
   - Getting Started:
     - Overview: getting-started/index.md
     - Introduction: getting-started/introduction.md
