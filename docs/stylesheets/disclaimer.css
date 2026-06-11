@@ -1,0 +1,103 @@
+/* Disclaimer Overlay */
+.disclaimer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 11, 25, 0.85); /* Dark background with subtle purple/slate tint */
+  backdrop-filter: blur(25px); /* Premium blur to obscure background contents */
+  -webkit-backdrop-filter: blur(25px);
+  z-index: 99999; /* Ensure it overlays on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* Fade out animation on accept */
+.disclaimer-overlay.disclaimer-fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Modal Card */
+.disclaimer-modal {
+  background: #1e1b29; /* Darker slate/purple theme matching slate scheme */
+  border: 1px solid rgba(157, 78, 221, 0.3); /* Subtle purple accent border */
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 35px rgba(157, 78, 221, 0.15);
+  text-align: center;
+  box-sizing: border-box;
+  animation: disclaimer-bounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Scale up bounce animation for the modal */
+@keyframes disclaimer-bounce {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Warning Icon */
+.disclaimer-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: pulse-warn 2.5s infinite;
+}
+
+@keyframes pulse-warn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Typography */
+.disclaimer-title {
+  color: #e0c1c1 !important; /* Soft rose color matching body text */
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+.disclaimer-text {
+  color: rgba(224, 193, 193, 0.8) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Button with micro-animations */
+.disclaimer-button {
+  background: linear-gradient(135deg, #7b2cbf, #9d4edd); /* Purple gradient */
+  color: #ffffff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(123, 44, 191, 0.4);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  width: 100%;
+}
+
+.disclaimer-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(157, 78, 221, 0.6);
+  background: linear-gradient(135deg, #9d4edd, #c77dff);
+}
+
+.disclaimer-button:active {
+  transform: translateY(0);
+}

@@ -18,7 +18,7 @@ theme:
     accent: purple
 
 nav:
-  - Home: docs/index.md
+  - Home: index.md
   - Getting Started:
     - Overview: getting-started/index.md
     - Introduction: getting-started/introduction.md
@@ -52,3 +52,10 @@ plugins:
 
 docs_dir: docs
 site_dir: site
+
+extra_css:
+  - stylesheets/disclaimer.css
+
+extra_javascript:
+  - javascripts/disclaimer.js
+
