@@ -22,6 +22,7 @@ nav:
   - Getting Started:
     - Overview: getting-started/index.md
     - Introduction: getting-started/introduction.md
+    - who: getting-started/who.md
   - Tools:
     - Overview: tools/index.md
     - Tools List: tools/overview.md
