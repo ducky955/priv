@@ -1,7 +1,7 @@
 site_name: Priv - Online Anonymity Guide
 site_description: A comprehensive guide to online anonymity, privacy tools, and operational security
 site_author: Priv Contributors
-site_url: https://example.com
+site_url: https://priv.idontlikethis.org
 
 theme:
   name: material
