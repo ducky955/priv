@@ -2,6 +2,7 @@ site_name: Priv - Online Anonymity Guide
 site_description: A comprehensive guide to online anonymity, privacy tools, and operational security
 site_author: Priv Contributors
 site_url: https://priv.idontlikethis.org
+use_directory_urls: false
 
 theme:
   name: material
@@ -18,7 +19,7 @@ theme:
     accent: purple
 
 nav:
-  - Home: docs/index.md
+  - Home: index.md
   - Getting Started:
     - Overview: getting-started/index.md
     - Introduction: getting-started/introduction.md
