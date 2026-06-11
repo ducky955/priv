@@ -1,0 +1,53 @@
+site_name: Priv - Online Anonymity Guide
+site_description: A comprehensive guide to online anonymity, privacy tools, and operational security
+site_author: Priv Contributors
+site_url: https://example.com
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+    - content.code.select
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: purple
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/index.md
+    - Introduction: getting-started/introduction.md
+  - Tools:
+    - Overview: tools/index.md
+    - Tools List: tools/overview.md
+  - Concepts:
+    - Overview: concepts/index.md
+    - Concepts List: concepts/overview.md
+  - News:
+    - Overview: news/index.md
+    - News Updates: news/overview.md
+
+markdown_extensions:
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search
+  - privacy
+
+docs_dir: docs
+site_dir: site
