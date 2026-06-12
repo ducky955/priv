@@ -27,6 +27,7 @@ nav:
   - Tools:
     - Overview: tools/index.md
     - Tools List: tools/overview.md
+    - Staying Anonymous: tools/anonymity.md
   - Concepts:
     - Overview: concepts/index.md
     - Concepts List: concepts/overview.md
