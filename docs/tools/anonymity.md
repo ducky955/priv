@@ -12,7 +12,7 @@ Instead of connecting directly to a website, your request is sent to a server, w
 
 # Better ways to stay anonymous
 - VPN
-A VPN hides your traffic from local routers and ISP. It essentialy "tunnels" your traffic to a server. You are trusting the VPN provider with your data, instead of your ISP or system admin. If you want to browse anonymously, this is a way to start. Like a Proxy, this can also be hosted localy.
+A VPN hides your traffic from local routers and ISP. It essentialy "tunnels" your traffic to a server. You are trusting the VPN provider with your data, instead of your ISP or system admin. If you want to browse anonymously, this is a way to start. Like a Proxy, this can also be hosted localy. Learn how [here](Hosting-vpn.md)
 - Tor
 Tor is a decentralzized network specialized for high level anonymity. Instead of using a single server like a VPN or Proxy, tthe Tor network encrypts your data and sends it around three or more nodes(servers) The good thing about Tor is that the first node knows who you are but not where you're going. The middle node(s) know nothing. The final node knows where you're going, but not who you are. Its extremely hard to be tracked via Tor. Learn more at the [Tor Project](https://www.torproject.org/)
 - Special OS
